@@ -3,7 +3,7 @@
 
 #pragma warning (disable: 4996)
 
-static int win_height = 980, win_width = 980, map_size = 128;
+static int win_height = 980, win_width = 980, map_size = 64;
 lifegame lif(map_size);
 bool timer = false;
 
@@ -161,6 +161,11 @@ LRESULT CALLBACK Procedure(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam
 				SetRect(&rt, win_width - 40, 0, win_width, 20);
 				char gen[32];
 				itoa(lif.gen, gen, 10);
+				DrawText(mDC, gen, -1, &rt, DT_WORDBREAK);
+
+
+				SetRect(&rt, 0, 0, 40, 20);
+				itoa(lif.count, gen, 10);
 				DrawText(mDC, gen, -1, &rt, DT_WORDBREAK);
 
 			BitBlt(hdc, 0, 0, mRC.right, mRC.bottom, mDC, 0, 0, SRCCOPY);

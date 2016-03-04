@@ -8,7 +8,7 @@
 using namespace std;
 class lifegame {
 public:
-	size_t size;
+	size_t size, count;
 	int gen = 0;
 	vector<vector<bool>> ele;
 	lifegame(size_t _size) : size(_size)
@@ -21,7 +21,7 @@ public:
 	}
 	int next()
 	{
-		int chksum = 0;
+		count = 0;
 		vector<vector<bool>> nxt(size, vector<bool>(size, false));
 		for (int i = 0; i < size; i++)
 			for (int j = 0; j < size; j++)
@@ -29,19 +29,19 @@ public:
 				if (!ele[i][j] && nearby(i, j) == 3)
 				{
 					nxt[i][j] = true;
-					chksum++;
+					count++;
 				}
 				if (ele[i][j] && (nearby(i, j) == 2 || nearby(i, j) == 3))
 				{
 					nxt[i][j] = true;
-					chksum++;
+					count++;
 				}
 			}
-		if (!chksum)
+		if (!count)
 			gen = 0;
 		ele.assign(nxt.begin(), nxt.end());
 		gen++;
-		return chksum;
+		return count;
 	}
 	void clear()
 	{
