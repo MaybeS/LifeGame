@@ -92,6 +92,10 @@ LRESULT CALLBACK Procedure(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam
 			{
 				case 'C':
 					lif.clear();
+					break;
+				case 'N':
+					lif.next();
+					break;
 				default:
 					break;
 			}

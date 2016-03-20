@@ -3,7 +3,7 @@
 #include <functional>
 #include <algorithm>
 #define IDT_TIMER_GEN 1
-#define TIMER_GEN_INTERVAL 333
+#define TIMER_GEN_INTERVAL 1
 
 using namespace std;
 class lifegame {
