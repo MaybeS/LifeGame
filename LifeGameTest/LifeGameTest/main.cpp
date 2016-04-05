@@ -3,7 +3,7 @@
 
 #pragma warning (disable: 4996)
 
-static int win_height = 980, win_width = 980, map_size = 64;
+static int win_height = 980, win_width = 980, map_size = 90;
 lifegame lif(map_size);
 bool timer = false;
 
@@ -13,6 +13,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	SetProcessWorkingSetSize(GetCurrentProcess(), -1, -1);
 	HWND hwnd;
 	MSG messages;
+
 	WNDCLASSEX win_main;
 
 	SetProcessWorkingSetSize(GetCurrentProcess(), -1, -1);
